@@ -20,7 +20,8 @@ pipeline
     		steps
     		{
     			 echo "Current workspace : ${workspace}"
-    			 sh '.\gradlew --version'
+    			 sh 'chmod +x ./gradlew'
+    			 sh './gradlew --version'
     		}
     	}
         stage('SonarQube analysis') {
