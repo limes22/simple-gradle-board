@@ -20,7 +20,7 @@ pipeline
     		steps
     		{
     			 echo "Current workspace : ${workspace}"
-    			 sh 'gradlew --version'
+    			 sh '.\gradlew --version'
     		}
     	}
         stage('SonarQube analysis') {
@@ -28,7 +28,7 @@ pipeline
             steps
             {
               withSonarQubeEnv('sonarscanner') {
-                sh "gradlew sonar -Dsonar.projectKey=board -Dsonar.login=sqp_fa5a05f4d28c93916dca689cb45e986c900a79f6"
+                sh ".\gradlew sonar -Dsonar.projectKey=board -Dsonar.login=sqp_fa5a05f4d28c93916dca689cb45e986c900a79f6"
               }
             }
       }
