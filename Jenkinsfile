@@ -74,7 +74,7 @@ pipeline
             git credentialsId: 'github-login',
                 url: 'https://github.com/limes22/simple-gradle-board.git',
                 branch: 'main'
-            sh "sed -i 's|${REPOSITORY}:0.*|${REPOSITORY}:0.${BUILD_NUMBER}|' ./yaml/board-comment.yaml"
+            sh "sed -i 's|${REPOSITORY}:1.0.*|${REPOSITORY}:1.0.${BUILD_NUMBER}|' ./yaml/board-comment.yaml"
             withCredentials([gitUsernamePassword(credentialsId: 'github-login')]) {
                 sh "git config --global user.email howdi2002@naver.com"
                 sh "git config --global user.name limes22"

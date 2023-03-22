@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: board
-          image: howdi2000/board:0.1
+          image: howdi2000/board:1.0.0
           ports:
             - containerPort: 8080
 
@@ -32,5 +32,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      nodePort: 30001
       targetPort: 8080
