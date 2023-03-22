@@ -38,6 +38,7 @@ pipeline
             steps {
             	sh 'pwd'
                 sh './gradlew build'
+                sh 'cp $WORKSPACE/build/libs/board-0.0.1-SNAPSHOT.jar $WORKSPACE'
             }
         }
 
