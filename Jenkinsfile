@@ -24,15 +24,15 @@ pipeline
     			 sh './gradlew --version'
     		}
     	}
-//         stage('SonarQube analysis') {
-//             agent any
-//             steps
-//             {
-//               withSonarQubeEnv('sonarscanner') {
-//                 sh "./gradlew sonar -Dsonar.projectKey=board -Dsonar.login=sqp_fa5a05f4d28c93916dca689cb45e986c900a79f6"
-//               }
-//             }
-//       }
+        stage('SonarQube analysis') {
+            agent any
+            steps
+            {
+              withSonarQubeEnv('sonarscanner') {
+                sh "./gradlew sonar -Dsonar.projectKey=board -Dsonar.login=sqp_fa5a05f4d28c93916dca689cb45e986c900a79f6 -Dsonar.host.url=http://192.168.71.157:9000/sonarqube"
+              }
+            }
+      }
         stage('build')
         {
             steps {
